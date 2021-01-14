@@ -25,6 +25,10 @@ int main(int argc, char ** argv) {
 		printToScreen(b);
 
 		printToScreen(x);
+
+		printToScreen(A);
+		printToScreen(b);
+		
 	  freeMatrix(x);
 	} else {
 					fprintf(stderr,"Błąd! Nie mogłem utworzyć wektora wynikowego x.\n");
