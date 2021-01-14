@@ -21,17 +21,9 @@ int main(int argc, char ** argv) {
 	if (x != NULL) {
 		res = backsubst(x,A,b);
 
-<<<<<<< HEAD
 		printToScreen(A);
 		printToScreen(b);
 
-		printToScreen(x);
-
-=======
->>>>>>> alex_version
-		printToScreen(A);
-		printToScreen(b);
-		
 		printToScreen(x);
 		
 	  freeMatrix(x);
