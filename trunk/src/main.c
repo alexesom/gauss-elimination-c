@@ -21,10 +21,10 @@ int main(int argc, char ** argv) {
 	if (x != NULL) {
 		res = backsubst(x,A,b);
 
-		printToScreen(x);
-
 		printToScreen(A);
 		printToScreen(b);
+		
+		printToScreen(x);
 		
 	  freeMatrix(x);
 	} else {
