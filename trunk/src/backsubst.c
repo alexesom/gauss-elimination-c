@@ -6,6 +6,7 @@
  */
 int  backsubst(Matrix *x, Matrix *mat, Matrix *b) 
 {
+	int b;
 	return 0;
 }
 
