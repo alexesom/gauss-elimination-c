@@ -17,13 +17,30 @@ int main(int argc, char ** argv) {
 	printToScreen(b);
 
 	res = eliminate(A,b);
+	if(res)
+	{
+		fprintf(stderr,"Błąd 1 - macierz osobliwa - dzielenie przez 0\n");
+		return 1;
+	}
+
 	x = createMatrix(b->r, 1);
 	if (x != NULL) {
 		res = backsubst(x,A,b);
-
+		if(res == 1) 
+		{
+			fprintf(stderr,"Błąd 1 - błąd dzielenia przez 0 (element na diagonali = 0)\n");
+			return 1;
+		}
+		if(res == 2) 
+		{
+			fprintf(stderr,"Błąd 2 - błąd nieprawidłowych rozmiarów macierzy\n");
+			return 2;
+		}
+		printf("\nChanged matrices A and b\n");
 		printToScreen(A);
 		printToScreen(b);
-
+		printf("\n\n");
+		printf("X matrix\n");
 		printToScreen(x);
 		
 	  freeMatrix(x);
