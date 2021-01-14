@@ -8,7 +8,20 @@ int eliminate(Matrix *mat, Matrix *b){
     /**
   	 * Tutaj należy umieścić właściwą implemntację.
 		 */
-
+		int n = mat->r;
+		for(int k = 0 ; k <= n-2; k++)
+		{
+			for(int i = k+1; i <= n-1; i++)
+			{
+				if(mat->data[i][k] == 0) continue;
+				double fact = mat->data[k][k] / mat->data[i][k];
+				for(int j = k; j <= n-1; j++)
+				{
+					mat->data[i][j] = mat->data[k][j] - mat->data[i][j]*fact;
+				}
+				b->data[i][0] = b->data[k][0] - b->data[i][0]*fact;				
+			}
+		}
 		return 0;
 }
 
