@@ -1,8 +1,7 @@
-# Gauss Elimination in C
-This is working prototype with implemented Gauss Elimination in it.
+# My algorithms
+This repo is for all algorithms that I wrote in Java and C during my studies.
 
-
-To invoke tests just invoke *make test* command in terminal.
+Feel free to copy them!
 **Have fun!**
 
-https://github.com/alexesom/gauss-elimination-c
+https://github.com/alexesom/my_algorithms

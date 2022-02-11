@@ -1,0 +1,19 @@
+Chciałbym uzasadnić zmianę funkcji g() w hashDoubleProbing:
+z g() = 1 + (key % (m - 3)) (1)
+na g() = 1 + abs(key % (m - 3)) (2)
+W (1) jest dość wysokie prawdopodobięstwo tego, że (key % (m - 3)) będzie równe -1, co powoduje za sobą to,
+że przy próbie zmienić wartość hashId zwiększając i, hashId, z tego powodu że główna funkcja to (hashFuncF + i * hashFuncG) % m,
+nigdy nie podlegnie zmianie. Więc zdecydoowałem dodać modulo (2) żeby g() nigdy nie było równe 0
+
+hash linear sort:
+1. Widać że przy małym rozmiarze hash tablicy wstawianie i pobiranie zajmują zajmują troche więcej czasu z powodu
+jej zwiększania i primary clusterization
+
+hash quadratic sort:
+1. Można zauważyć że początkowy rozmiar tablicy i constants a i b w żaden sposób nie wpływają na czas wstawiania
+2. Początkowy rozmiar tablicy przy pobieraniu też w żaden sposób nie wpływają na czas ale constants a i b z ich
+zwiększeniem pozytywnie wpływają na czas pobierania
+
+hash double sort:
+1. 1. Widać że przy małym rozmiarze hash tablicy wstawianie i pobiranie zajmują troche więcej czasu z powodu
+   jej zwiększania
